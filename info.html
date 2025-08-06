@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KahvePortal - Proje Yapısı</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .coffee-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .file-structure {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .folder {
+            color: #667eea;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .file {
+            color: #333;
+            margin-left: 20px;
+            margin-top: 3px;
+        }
+        
+        .description {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 10px;
+            font-style: italic;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-card h4 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tech-badge {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .setup-steps {
+            background: #f0f7ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .step {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #667eea;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #d63384;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <div class="coffee-icon">☕</div>
+            KahvePortal - Proje Yapısı ve Kurulum Kılavuzu
+        </h1>
+        
+        <div class="tech-stack">
+            <span class="tech-badge">PHP 8.1+</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">Bootstrap 5</span>
+            <span class="tech-badge">jQuery</span>
+            <span class="tech-badge">Chart.js</span>
+            <span class="tech-badge">SweetAlert2</span>
+            <span class="tech-badge">DataTables</span>
+            <span class="tech-badge">PHPMailer</span>
+        </div>
+
+        <h2>📁 Klasör Yapısı</h2>
+        <div class="file-structure">
+            <div class="folder">📂 kahveportal.com/</div>
+            <div class="file">├── 📄 index.php <span class="description">// Ana sayfa</span></div>
+            <div class="file">├── 📄 login.php <span class="description">// Giriş sayfası</span></div>
+            <div class="file">├── 📄 register.php <span class="description">// Kayıt sayfası</span></div>
+            <div class="file">├── 📄 dashboard.php <span class="description">// Kullanıcı paneli</span></div>
+            <div class="file">├── 📄 menu.php <span class="description">// Kahve menüsü</span></div>
+            <div class="file">├── 📄 cart.php <span class="description">// Sepet sayfası</span></div>
+            <div class="file">├── 📄 orders.php <span class="description">// Siparişlerim</span></div>
+            <div class="file">├── 📄 balance.php <span class="description">// Bakiye işlemleri</span></div>
+            <div class="file">├── 📄 profile.php <span class="description">// Profil ayarları</span></div>
+            <div class="file">├── 📄 .htaccess <span class="description">// URL yönlendirme</span></div>
+            
+            <div class="folder">├── 📂 admin/</div>
+            <div class="file">│   ├── 📄 index.php <span class="description">// Admin giriş</span></div>
+            <div class="file">│   ├── 📄 dashboard.php <span class="description">// Admin ana sayfa</span></div>
+            <div class="file">│   ├── 📄 orders.php <span class="description">// Sipariş yönetimi</span></div>
+            <div class="file">│   ├── 📄 menu.php <span class="description">// Menü yönetimi</span></div>
+            <div class="file">│   ├── 📄 users.php <span class="description">// Kullanıcı yönetimi</span></div>
+            <div class="file">│   ├── 📄 balance.php <span class="description">// Bakiye yönetimi</span></div>
+            <div class="file">│   ├── 📄 settings.php <span class="description">// Sistem ayarları</span></div>
+            <div class="file">│   ├── 📄 reports.php <span class="description">// Raporlar</span></div>
+            <div class="file">│   └── 📄 notifications.php <span class="description">// Bildirimler</span></div>
+            
+            <div class="folder">├── 📂 includes/</div>
+            <div class="file">│   ├── 📄 config.php <span class="description">// Veritabanı bağlantısı</span></div>
+            <div class="file">│   ├── 📄 functions.php <span class="description">// Yardımcı fonksiyonlar</span></div>
+            <div class="file">│   ├── 📄 auth.php <span class="description">// Kimlik doğrulama</span></div>
+            <div class="file">│   ├── 📄 mail.php <span class="description">// Email fonksiyonları</span></div>
+            <div class="file">│   └── 📄 session.php <span class="description">// Session yönetimi</span></div>
+            
+            <div class="folder">├── 📂 api/</div>
+            <div class="file">│   ├── 📄 cart.php <span class="description">// Sepet API</span></div>
+            <div class="file">│   ├── 📄 order.php <span class="description">// Sipariş API</span></div>
+            <div class="file">│   ├── 📄 balance.php <span class="description">// Bakiye API</span></div>
+            <div class="file">│   ├── 📄 notifications.php <span class="description">// Bildirim API</span></div>
+            <div class="file">│   └── 📄 stats.php <span class="description">// İstatistik API</span></div>
+            
+            <div class="folder">├── 📂 assets/</div>
+            <div class="folder">│   ├── 📂 css/</div>
+            <div class="file">│   │   ├── 📄 style.css <span class="description">// Ana stil dosyası</span></div>
+            <div class="file">│   │   ├── 📄 admin.css <span class="description">// Admin stil</span></div>
+            <div class="file">│   │   └── 📄 dark-mode.css <span class="description">// Dark tema</span></div>
+            <div class="folder">│   ├── 📂 js/</div>
+            <div class="file">│   │   ├── 📄 app.js <span class="description">// Ana JavaScript</span></div>
+            <div class="file">│   │   ├── 📄 cart.js <span class="description">// Sepet işlemleri</span></div>
+            <div class="file">│   │   ├── 📄 admin.js <span class="description">// Admin JS</span></div>
+            <div class="file">│   │   └── 📄 notifications.js <span class="description">// Bildirimler</span></div>
+            <div class="folder">│   └── 📂 images/</div>
+            <div class="file">│       ├── 📄 logo.png</div>
+            <div class="file">│       ├── 📄 qr-placeholder.png</div>
+            <div class="file">│       └── 📂 coffee/ <span class="description">// Kahve görselleri</span></div>
+            
+            <div class="folder">├── 📂 uploads/</div>
+            <div class="file">│   ├── 📂 receipts/ <span class="description">// Dekont yüklemeleri</span></div>
+            <div class="file">│   └── 📂 avatars/ <span class="description">// Profil fotoğrafları</span></div>
+            
+            <div class="folder">└── 📂 vendor/</div>
+            <div class="file">    └── 📂 phpmailer/ <span class="description">// PHPMailer kütüphanesi</span></div>
+        </div>
+
+        <h2>🗄️ Veritabanı Tabloları</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>users</h4>
+                <p>Kullanıcı bilgileri, şifreleri, roller</p>
+            </div>
+            <div class="feature-card">
+                <h4>products</h4>
+                <p>Kahve menüsü, fiyatlar, stok durumu</p>
+            </div>
+            <div class="feature-card">
+                <h4>orders</h4>
+                <p>Sipariş kayıtları ve durumları</p>
+            </div>
+            <div class="feature-card">
+                <h4>order_items</h4>
+                <p>Sipariş detayları</p>
+            </div>
+            <div class="feature-card">
+                <h4>balance_transactions</h4>
+                <p>Bakiye hareketleri</p>
+            </div>
+            <div class="feature-card">
+                <h4>balance_requests</h4>
+                <p>Bakiye yükleme talepleri</p>
+            </div>
+            <div class="feature-card">
+                <h4>settings</h4>
+                <p>Sistem ayarları</p>
+            </div>
+            <div class="feature-card">
+                <h4>notifications</h4>
+                <p>Bildirim kayıtları</p>
+            </div>
+            <div class="feature-card">
+                <h4>favorites</h4>
+                <p>Favori kahveler</p>
+            </div>
+            <div class="feature-card">
+                <h4>cart</h4>
+                <p>Sepet öğeleri</p>
+            </div>
+            <div class="feature-card">
+                <h4>order_hours</h4>
+                <p>Sipariş saatleri</p>
+            </div>
+            <div class="feature-card">
+                <h4>categories</h4>
+                <p>Ürün kategorileri</p>
+            </div>
+        </div>
+
+        <h2>🚀 Kurulum Adımları</h2>
+        <div class="setup-steps">
+            <div class="step" data-step="1">
+                <strong>Dosyaları Yükleyin</strong>
+                <p>Tüm dosyaları hosting'inizin public_html klasörüne yükleyin.</p>
+            </div>
+            
+            <div class="step" data-step="2">
+                <strong>Veritabanı Tablolarını Oluşturun</strong>
+                <p>phpMyAdmin'e giriş yapın ve aşağıdaki SQL kodunu çalıştırın:</p>
+                <pre>-- Veritabanı tabloları create_tables.sql dosyasında</pre>
+            </div>
+            
+            <div class="step" data-step="3">
+                <strong>Config Dosyasını Düzenleyin</strong>
+                <p><code>includes/config.php</code> dosyasındaki veritabanı bilgilerini güncelleyin.</p>
+            </div>
+            
+            <div class="step" data-step="4">
+                <strong>Dosya İzinlerini Ayarlayın</strong>
+                <pre>chmod 755 uploads/
+chmod 755 uploads/receipts/
+chmod 755 uploads/avatars/</pre>
+            </div>
+            
+            <div class="step" data-step="5">
+                <strong>Admin Hesabı Oluşturun</strong>
+                <p>phpMyAdmin üzerinden admin kullanıcısı ekleyin veya register sayfasından kayıt olup role değerini 'admin' yapın.</p>
+            </div>
+            
+            <div class="step" data-step="6">
+                <strong>Cron Job Ayarlayın (Opsiyonel)</strong>
+                <p>Otomatik bildirimler için cron job ekleyin:</p>
+                <pre>*/5 * * * * /usr/bin/php /home/username/public_html/cron/notifications.php</pre>
+            </div>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Güvenlik Uyarısı:</strong>
+            <ul style="margin-top: 10px; margin-left: 20px;">
+                <li>Admin paneli için güçlü şifre kullanın</li>
+                <li>SSL sertifikası kullanın</li>
+                <li>Düzenli yedekleme yapın</li>
+                <li>Dosya yükleme boyutlarını kontrol edin</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <strong>✅ Kurulum Tamamlandı!</strong>
+            <p style="margin-top: 10px;">Artık sitenizi kullanmaya başlayabilirsiniz. Admin paneline <code>/admin</code> adresinden erişebilirsiniz.</p>
+        </div>
+
+        <h2>📋 Özellikler</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>👥 Kullanıcı Sistemi</h4>
+                <p>Kayıt, giriş, profil yönetimi</p>
+            </div>
+            <div class="feature-card">
+                <h4>☕ Menü Yönetimi</h4>
+                <p>Dinamik kahve menüsü</p>
+            </div>
+            <div class="feature-card">
+                <h4>🛒 Sepet Sistemi</h4>
+                <p>Gelişmiş sepet yönetimi</p>
+            </div>
+            <div class="feature-card">
+                <h4>💰 Bakiye Sistemi</h4>
+                <p>Ön ödemeli bakiye yönetimi</p>
+            </div>
+            <div class="feature-card">
+                <h4>📱 Mobil Uyumlu</h4>
+                <p>Responsive tasarım</p>
+            </div>
+            <div class="feature-card">
+                <h4>🔔 Bildirimler</h4>
+                <p>Gerçek zamanlı bildirimler</p>
+            </div>
+            <div class="feature-card">
+                <h4>📊 Raporlama</h4>
+                <p>Detaylı raporlar ve grafikler</p>
+            </div>
+            <div class="feature-card">
+                <h4>🎨 Tema Desteği</h4>
+                <p>Dark/Light mode</p>
+            </div>
+            <div class="feature-card">
+                <h4>⏰ Zaman Yönetimi</h4>
+                <p>Sipariş saati kontrolü</p>
+            </div>
+            <div class="feature-card">
+                <h4>📧 Email Bildirimleri</h4>
+                <p>Otomatik email gönderimi</p>
+            </div>
+            <div class="feature-card">
+                <h4>🔍 Arama ve Filtreleme</h4>
+                <p>Gelişmiş arama özellikleri</p>
+            </div>
+            <div class="feature-card">
+                <h4>💳 QR Kod Desteği</h4>
+                <p>Kolay ödeme için QR kod</p>
+            </div>
+        </div>
+
+        <h2>🛠️ Teknik Detaylar</h2>
+        <h3>Güvenlik Önlemleri</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>SQL Injection koruması (Prepared Statements)</li>
+            <li>XSS koruması (htmlspecialchars)</li>
+            <li>CSRF token koruması</li>
+            <li>Şifre hashleme (password_hash)</li>
+            <li>Session güvenliği</li>
+            <li>Dosya yükleme kontrolü</li>
+        </ul>
+
+        <h3>Performans Optimizasyonları</h3>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li>Veritabanı indexleme</li>
+            <li>Lazy loading</li>
+            <li>Cache mekanizması</li>
+            <li>Minified CSS/JS</li>
+            <li>Optimized images</li>
+        </ul>
+    </div>
+</body>
+</html>
