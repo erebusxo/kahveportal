@@ -1,0 +1,655 @@
+/**
+ * KahvePortal - Admin Specific Styles
+ * assets/css/admin.css
+ */
+
+/* Admin Layout */
+.admin-container {
+    min-height: 100vh;
+    display: flex;
+}
+
+.admin-sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.admin-sidebar.collapsed {
+    width: 80px;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 0;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* Admin Cards */
+.admin-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.admin-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.admin-card .card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px 15px 0 0;
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+}
+
+.admin-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Statistics Cards */
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card-body {
+    padding: 2rem 1.5rem;
+    position: relative;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+.stat-icon.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.stat-icon.success {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+}
+
+.stat-icon.warning {
+    background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+    color: white;
+}
+
+.stat-icon.info {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+}
+
+.stat-icon.danger {
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    color: white;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #718096;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.stat-change {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.stat-change.positive {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.stat-change.negative {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+/* Data Tables */
+.admin-table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-table tbody td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+    background-color: rgba(102, 126, 234, 0.05);
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.pending {
+    background: #feebc8;
+    color: #7c2d12;
+}
+
+.status-badge.processing {
+    background: #bee3f8;
+    color: #2c5282;
+}
+
+.status-badge.completed {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.status-badge.cancelled {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+.status-badge.active {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.status-badge.inactive {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.action-btn {
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.action-btn:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.action-btn.view {
+    background: #ebf8ff;
+    color: #2b6cb0;
+}
+
+.action-btn.view:hover {
+    background: #bee3f8;
+    color: #2c5282;
+}
+
+.action-btn.edit {
+    background: #f0fff4;
+    color: #276749;
+}
+
+.action-btn.edit:hover {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.action-btn.delete {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+.action-btn.delete:hover {
+    background: #feb2b2;
+    color: #742a2a;
+}
+
+/* Forms */
+.admin-form {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.admin-form .form-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.admin-form .form-body {
+    padding: 2rem;
+}
+
+.admin-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.admin-form .form-label {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-form .form-control {
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.admin-form .form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Filters and Search */
+.filter-bar {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.filter-bar .form-control,
+.filter-bar .form-select {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box .form-control {
+    padding-left: 2.5rem;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+    font-size: 0.875rem;
+}
+
+/* Pagination */
+.admin-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.admin-pagination .pagination {
+    gap: 0.25rem;
+}
+
+.admin-pagination .page-link {
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    color: #667eea;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin: 0 0.125rem;
+}
+
+.admin-pagination .page-link:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.admin-pagination .page-item.active .page-link {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* Modals */
+.admin-modal .modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.admin-modal .modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px 15px 0 0;
+}
+
+.admin-modal .modal-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.admin-modal .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+/* Charts */
+.chart-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.chart-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+.chart-subtitle {
+    font-size: 0.875rem;
+    color: #718096;
+    margin: 0;
+}
+
+/* Alerts */
+.admin-alert {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid;
+}
+
+.admin-alert.alert-success {
+    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+    border-left-color: #48bb78;
+    color: #22543d;
+}
+
+.admin-alert.alert-warning {
+    background: linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%);
+    border-left-color: #ed8936;
+    color: #7c2d12;
+}
+
+.admin-alert.alert-danger {
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+    border-left-color: #f56565;
+    color: #742a2a;
+}
+
+.admin-alert.alert-info {
+    background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+    border-left-color: #4299e1;
+    color: #2c5282;
+}
+
+/* Loading States */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        height: 100vh;
+        z-index: 1000;
+    }
+    
+    .admin-sidebar.show {
+        left: 0;
+    }
+    
+    .admin-content {
+        margin-left: 0;
+    }
+    
+    .stat-card-body {
+        padding: 1.5rem 1rem;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .action-btn {
+        margin-bottom: 0.25rem;
+        justify-content: center;
+    }
+    
+    .filter-bar {
+        padding: 1rem;
+    }
+    
+    .chart-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-card .card-body {
+        padding: 1rem;
+    }
+    
+    .admin-form .form-body {
+        padding: 1.5rem;
+    }
+    
+    .stat-value {
+        font-size: 1.75rem;
+    }
+    
+    .admin-table {
+        font-size: 0.8rem;
+    }
+    
+    .admin-table thead th,
+    .admin-table tbody td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .admin-sidebar,
+    .filter-bar,
+    .action-buttons,
+    .admin-pagination {
+        display: none !important;
+    }
+    
+    .admin-content {
+        margin-left: 0 !important;
+    }
+    
+    .admin-card {
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+    
+    .stat-card {
+        break-inside: avoid;
+    }
+}
+
+/* Custom Utilities */
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-gradient-admin {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.border-admin {
+    border-color: #667eea !important;
+}
+
+.shadow-admin {
+    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.1) !important;
+}
+
+.rounded-admin {
+    border-radius: 15px !important;
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
